@@ -1,0 +1,56 @@
+﻿@model AppCuisto_MVC.Models.Favorite
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>Favorite</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Created_At)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Created_At)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Receipts_Id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Receipts_Id)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Cookers_Id)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Cookers_Id)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>
